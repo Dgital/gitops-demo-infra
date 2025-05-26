@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: tacu-staging
+  namespace: flux-system
+spec:
+  interval: 3m0s
+  path: ./manifests
+  prune: true
+  retryInterval: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: tacu-staging
+  timeout: 60m0s
+  wait: true
