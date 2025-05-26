@@ -1,7 +1,7 @@
 ﻿apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: gitops-demo-staging
+  name: gitops-demo-shared-staging
   namespace: flux-system
 spec:
   interval: 1m0s
