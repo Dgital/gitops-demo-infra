@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: flagger-system
+  name: istio-system
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
