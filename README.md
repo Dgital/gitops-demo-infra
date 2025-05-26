@@ -15,8 +15,9 @@ CDK is an IaC solution to create AWS resources, in this project it is responsibl
 
 1. Navigate to the `cdk` directory and run the `pnpm install` command.
 2. Create a `.env` file based on `.env.template`.
-3. If you have multiple AWS account, we reccomend using the [Granted](https://docs.commonfate.io/granted/introduction) CLI tool.
-4. After you installed the dependencies, and authenticated to the correct AWS account you can deploy the cluster with `pnpm deploy:eks:shared` (or remove it with `pnpm destroy:eks:shared`
+3. If you have multiple AWS accounts, we reccomend using the [Granted](https://docs.commonfate.io/granted/introduction) CLI tool.
+4. If this is the first time that you use CDK on the given AWS account, you need to bootstrap it with the `pnpm bootstrap` command.
+5. After you installed the dependencies, and authenticated to the correct AWS account you can deploy the cluster with `pnpm deploy:eks:shared` (or remove it with `pnpm destroy:eks:shared`
 
 ### Post setup
 
@@ -36,3 +37,20 @@ The manifests are stored in the `clusters` directory for each cluster. The curre
 The manifests contain references to the external Helm repositories and to the environments in the `gitops-demo-manifests` git repository.
 
 The contents of the `clusters/<cluster-name>/flux-system` repository should not be edited manually. It is only modifiable by the [Flux CLI](https://fluxcd.io/flux/cmd/).
+
+### Install FluxCD on a new cluster
+
+For insturctions read the (docs)[https://fluxcd.io/flux/installation/bootstrap/] relevant to your source provider. Our cluster is bootstrapped in the follwoing way:
+1. Set the `GITHUB_TOKEN` env variable with a token that has the following permisions:
+   - Administration -> Access: Read-only
+   - Contents -> Access: Read and write
+   - Metadata -> Access: Read-only
+2. Run:
+```
+flux bootstrap github \
+  --token-auth \
+  --owner=dgital \
+  --repository=gitops-demo-infra \
+  --branch=main \
+  --path=clusters/gitops-demo-shared
+```
