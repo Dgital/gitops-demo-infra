@@ -6,5 +6,5 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: tacu/staging
+    branch: gitops-demo-shared/staging
   url: https://github.com/Dgital/gitops-demo-manifests
