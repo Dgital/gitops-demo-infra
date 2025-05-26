@@ -6,5 +6,5 @@ import { config } from "../config";
 
 const app = new cdk.App();
 
-const eksStackName =  "gitops-demo-eks-main-shared";
-new SharedEksStack(app, eksStackName, "gitops-demo", config, { env: config.awsAccount, stackName: eksStackName });
+const eksStackName = "gitops-demo-shared-eks";
+new SharedEksStack(app, eksStackName, "gitops-demo-shared", config, { env: config.awsAccount, stackName: eksStackName });

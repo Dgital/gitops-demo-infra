@@ -26,7 +26,7 @@ CDK is an IaC solution to create AWS resources, in this project it is responsibl
 
 - Configure kubectl locally
   - Make sure that you use the correct AWS account
-  - Run `aws eks update-kubeconfig --region <your-region> --name gitops-demo`
+  - Run `aws eks update-kubeconfig --region <your-region> --name gitops-demo-shared`
   - If you need to manage multile clusters the (kubectx)[https://github.com/ahmetb/kubectx] tool could be useful.
 
 ## FluxCD manifests

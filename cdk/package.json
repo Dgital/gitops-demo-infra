@@ -4,8 +4,8 @@
   "description": "",
   "main": "bin/cdk.ts",
   "scripts": {
-    "deploy:eks:shared": "cdk deploy gitops-demo-eks-main-shared --require-approval never --context env=qa",
-    "destroy:eks:shared": "cdk destroy gitops-demo-eks-main-shared --require-approval never --context env=qa --force"
+    "deploy:eks:shared": "cdk deploy gitops-demo-shared-eks --require-approval never",
+    "destroy:eks:shared": "cdk destroy gitops-demo-shared-eks --require-approval never --force"
   },
   "keywords": [],
   "author": "",
