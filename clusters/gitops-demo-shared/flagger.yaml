@@ -37,6 +37,7 @@ spec:
       verify: # verify the chart signature with Cosign keyless
         provider: cosign 
   values:
+    meshProvider: gatewayapi:v1
     nodeSelector:
       kubernetes.io/os: linux
 ---
