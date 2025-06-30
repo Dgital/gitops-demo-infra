@@ -1,6 +1,6 @@
 # GitOps Demo: infrastructure repository
 
-This repository contains the CDK application that creates the cluster in AWS and the cluster specific manifests for FluxCD.
+This repository contains the source code for our [GitOps - A Practical Implementation](https://dgital.com/blog/2025/06/17/gitops-practical-implementation) case study. It includes the CDK application that creates the cluster in AWS and the cluster specific manifests for FluxCD.
 
 ## CDK
 
